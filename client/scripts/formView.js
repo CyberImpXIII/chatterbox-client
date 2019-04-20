@@ -7,9 +7,17 @@ var FormView = {
   },
 
   handleSubmit: function(event) {
-    // Stop the browser from submitting the form
     event.preventDefault();
-    
+    // Stop the browser from submitting the form
+    let CurrentMessage = { 
+        username: App.username,
+        text: $('#message').val(),
+        roomname: RoomsView.$select.val()
+    }; 
+   console.log(CurrentMessage)
+
+    Parse.create(CurrentMessage, ()=>{MessagesView.initialize(); console.log("THIS RAN!")}); 
+
     console.log('click!');
   },
 
@@ -19,3 +27,4 @@ var FormView = {
   }
 
 };
+

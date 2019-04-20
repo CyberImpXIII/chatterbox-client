@@ -27,7 +27,6 @@ var RoomsView = {
         if(message["roomname"]===undefined) { message["roomname"] = "Main Lobby" };
         // if(message["roomname"].length > 30) { message["roomname"] = "Main Lobby" };
         html += MessageView.render(message);
-        console.log(html);
         }
       $("#chats").html(html);
     });

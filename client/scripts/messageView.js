@@ -2,7 +2,7 @@ var MessageView = {
 
   render: _.template(`
       <div class="chat <%- roomname %>">
-        <div class="username"><%- username %></div>
+        <div class="username"><%- JSON.stringify(username) %></div>
         <div><%- text %></div>
       </div>
     `)
